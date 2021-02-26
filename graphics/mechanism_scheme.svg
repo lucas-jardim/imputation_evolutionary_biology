@@ -1,0 +1,463 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:osb="http://www.openswatchbook.org/uri/2009/osb"
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="210mm"
+   height="297mm"
+   viewBox="0 0 210 297"
+   version="1.1"
+   id="svg8"
+   inkscape:version="0.92.5 (2060ec1f9f, 2020-04-08)"
+   sodipodi:docname="mechanism_scheme.svg"
+   inkscape:export-filename="/home/lucasjardim/google-drive/Documents/projetos/imputation/imputation/graphics/mechanism_scheme.png"
+   inkscape:export-xdpi="300"
+   inkscape:export-ydpi="300">
+  <defs
+     id="defs2">
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient1157">
+      <stop
+         style="stop-color:#bcd35f;stop-opacity:1;"
+         offset="0"
+         id="stop1153" />
+      <stop
+         style="stop-color:#bcd35f;stop-opacity:0;"
+         offset="1"
+         id="stop1155" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient1149">
+      <stop
+         style="stop-color:#bcd35f;stop-opacity:1;"
+         offset="0"
+         id="stop1145" />
+      <stop
+         style="stop-color:#bcd35f;stop-opacity:0;"
+         offset="1"
+         id="stop1147" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient1106">
+      <stop
+         style="stop-color:#0465b1;stop-opacity:1;"
+         offset="0"
+         id="stop1102" />
+      <stop
+         style="stop-color:#0465b1;stop-opacity:0;"
+         offset="1"
+         id="stop1104" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient1486">
+      <stop
+         style="stop-color:#ffb380;stop-opacity:1;"
+         offset="0"
+         id="stop1482" />
+      <stop
+         style="stop-color:#ffb380;stop-opacity:0;"
+         offset="1"
+         id="stop1484" />
+    </linearGradient>
+    <linearGradient
+       id="linearGradient1189"
+       osb:paint="gradient">
+      <stop
+         style="stop-color:#ff0000;stop-opacity:1;"
+         offset="0"
+         id="stop1185" />
+      <stop
+         style="stop-color:#ff0000;stop-opacity:0;"
+         offset="1"
+         id="stop1187" />
+    </linearGradient>
+    <linearGradient
+       gradientTransform="translate(-1.3510476,0.05629434)"
+       inkscape:collect="always"
+       xlink:href="#linearGradient1209"
+       id="linearGradient1211"
+       x1="2.9047718"
+       y1="76.326241"
+       x2="40.621967"
+       y2="76.326241"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient1209">
+      <stop
+         style="stop-color:#0465b1;stop-opacity:1;"
+         offset="0"
+         id="stop1205" />
+      <stop
+         style="stop-color:#0465b1;stop-opacity:0;"
+         offset="1"
+         id="stop1207" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient1486"
+       id="linearGradient1219-9"
+       x1="-64.519691"
+       y1="-78.52755"
+       x2="-34.965145"
+       y2="-80.020988"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(1.0001319,0,0,1.0482505,-83.587378,-91.646168)" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient1486"
+       id="linearGradient1219-7"
+       x1="-47.791615"
+       y1="-61.586952"
+       x2="-45.024727"
+       y2="-95.545334"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(1.0001319,0,0,1.0482505,-83.707126,-91.773058)" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient1106"
+       id="linearGradient1108"
+       x1="1.9815655"
+       y1="76.286827"
+       x2="43.065105"
+       y2="76.286827"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       gradientTransform="translate(68.68244,-0.61724063)"
+       inkscape:collect="always"
+       xlink:href="#linearGradient1106"
+       id="linearGradient1108-3"
+       x1="1.9815655"
+       y1="76.286827"
+       x2="43.065105"
+       y2="76.286827"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       gradientTransform="translate(138.24486,0.43244951)"
+       inkscape:collect="always"
+       xlink:href="#linearGradient1106"
+       id="linearGradient1108-35"
+       x1="1.9815655"
+       y1="76.286827"
+       x2="43.065105"
+       y2="76.286827"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient1149"
+       id="linearGradient1151"
+       x1="-113.00425"
+       y1="183.86433"
+       x2="-45.583801"
+       y2="178.86446"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="translate(1.4274883,-2.7467767)" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient1157"
+       id="linearGradient1159"
+       x1="-119.87249"
+       y1="126.36654"
+       x2="-52.452038"
+       y2="121.36667"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="translate(2.1758928,0.91348292)" />
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.70737049"
+     inkscape:cx="528.23078"
+     inkscape:cy="767.05773"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1294"
+     inkscape:window-height="704"
+     inkscape:window-x="72"
+     inkscape:window-y="27"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <ellipse
+       style="fill:#ffb380;fill-opacity:1;stroke:none;stroke-width:0.39010918;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="path32-3"
+       cx="-45.844524"
+       cy="-78.717087"
+       rx="18.861086"
+       ry="18.293272"
+       transform="matrix(-0.99853663,0.05407948,-0.04921613,-0.99878815,0,0)" />
+    <ellipse
+       style="fill:#bcd35f;fill-opacity:1;stroke:none;stroke-width:0.39310038;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="path32-6"
+       cx="-111.14523"
+       cy="42.77483"
+       rx="18.863621"
+       ry="18.572382"
+       transform="matrix(0.06731269,-0.99773193,0.9982323,0.05943303,0,0)" />
+    <flowRoot
+       xml:space="preserve"
+       id="flowRoot86"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:20px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none"
+       transform="matrix(0.26458333,0,0,0.26458333,-13.229169,31.750014)"><flowRegion
+         id="flowRegion88"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:20px;font-family:Arial;-inkscape-font-specification:Arial;text-align:center;text-anchor:middle"><rect
+           id="rect90"
+           width="313.2803"
+           height="81.579292"
+           x="29.787233"
+           y="33.157982"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:20px;font-family:Arial;-inkscape-font-specification:Arial;text-align:center;text-anchor:middle" /></flowRegion><flowPara
+         id="flowPara92"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:20px;font-family:Arial;-inkscape-font-specification:Arial;text-align:center;text-anchor:middle">A) Missing Completely </flowPara><flowPara
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:20px;font-family:Arial;-inkscape-font-specification:Arial;text-align:center;text-anchor:middle"
+         id="flowPara2273">at Random</flowPara></flowRoot>    <flowRoot
+       xml:space="preserve"
+       id="flowRoot96"
+       style="font-style:normal;font-weight:normal;font-size:16px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+       transform="matrix(0.6055122,0,0,0.26458333,-101.01284,-10.054167)"><flowRegion
+         id="flowRegion98"
+         style="font-size:16px"><rect
+           id="rect100"
+           width="102.12766"
+           height="51.063831"
+           x="314.89362"
+           y="79.966492"
+           style="font-size:16px" /></flowRegion><flowPara
+         id="flowPara102" /></flowRoot>    <flowRoot
+       xml:space="preserve"
+       id="flowRoot104"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:20px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none"
+       transform="matrix(0.26458333,0,0,0.26458333,-7.9375004,24.431192)"><flowRegion
+         id="flowRegion106"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:20px;font-family:Arial;-inkscape-font-specification:Arial;text-align:center;text-anchor:middle"><rect
+           id="rect108"
+           width="211.70212"
+           height="57.446808"
+           x="578.72339"
+           y="60.817558"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:20px;font-family:Arial;-inkscape-font-specification:Arial;text-align:center;text-anchor:middle" /></flowRegion><flowPara
+         id="flowPara110">C) Missing Not at Random</flowPara></flowRoot>    <flowRoot
+       xml:space="preserve"
+       id="flowRoot112"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:20px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none"
+       transform="matrix(0.26458333,0,0,0.26458333,-1.5875001,-0.33835421)"><flowRegion
+         id="flowRegion114"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:20px;font-family:Arial;-inkscape-font-specification:Arial;text-align:center;text-anchor:middle"><rect
+           id="rect116"
+           width="199.50755"
+           height="63.84404"
+           x="302.12766"
+           y="154.43459"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:20px;font-family:Arial;-inkscape-font-specification:Arial;text-align:center;text-anchor:middle" /></flowRegion><flowPara
+         id="flowPara118"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:20px;font-family:Arial;-inkscape-font-specification:Arial;text-align:center;text-anchor:middle">B) Missing at Random</flowPara></flowRoot>    <ellipse
+       style="fill:url(#linearGradient1108);fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.38860556;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="path32"
+       cx="20.840164"
+       cy="76.286827"
+       rx="18.858599"
+       ry="18.154919" />
+    <flowRoot
+       xml:space="preserve"
+       id="flowRoot124-0"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:20px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none"
+       transform="matrix(0.26458333,0,0,0.26458333,-21.278631,-23.108869)"><flowRegion
+         id="flowRegion126-9"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:20px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;text-align:center;text-anchor:middle"><rect
+           id="rect128-3"
+           width="138.29787"
+           height="77.659576"
+           x="67.021278"
+           y="356.56223"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:20px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;text-align:center;text-anchor:middle" /></flowRegion><flowPara
+         id="flowPara130-6">Trait</flowPara></flowRoot>    <ellipse
+       style="fill:#ffb380;fill-opacity:1;stroke:none;stroke-width:0.39010918;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="path32-3-3"
+       transform="matrix(-0.99853663,0.05407948,-0.04921613,-0.99878815,0,0)"
+       ry="18.293272"
+       rx="18.861086"
+       cy="-82.51812"
+       cx="-116.04539" />
+    <ellipse
+       style="fill:url(#linearGradient1159);fill-opacity:1;stroke:none;stroke-width:0.39310038;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="path32-6-1"
+       cx="-98.833"
+       cy="127.28002"
+       rx="18.863619"
+       ry="18.572382"
+       transform="matrix(0.06731269,-0.99773193,0.9982323,0.05943303,0,0)" />
+    <ellipse
+       style="fill:#ffb380;fill-opacity:1;stroke:none;stroke-width:0.39010918;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="path32-3-31"
+       cx="-185.20857"
+       cy="-86.26297"
+       rx="18.861086"
+       ry="18.293272"
+       transform="matrix(-0.99853663,0.05407948,-0.04921613,-0.99878815,0,0)" />
+    <flowRoot
+       xml:space="preserve"
+       id="flowRoot124-06-3"
+       style="font-style:normal;font-weight:normal;font-size:16px;line-height:1.25;font-family:sans-serif;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none"
+       transform="matrix(0.26458333,0,0,0.26458333,157.77824,-22.916568)"><flowRegion
+         id="flowRegion126-2-3"
+         style="font-size:16px;text-align:center;text-anchor:middle"><rect
+           id="rect128-6-8"
+           width="138.29787"
+           height="77.659576"
+           x="67.021278"
+           y="356.56223"
+           style="font-size:16px;text-align:center;text-anchor:middle" /></flowRegion><flowPara
+         id="flowPara130-1-60">Phylogeny</flowPara></flowRoot>    <flowRoot
+       xml:space="preserve"
+       id="flowRoot124-0-7"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:20px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none"
+       transform="matrix(0.26458333,0,0,0.26458333,49.051819,-23.108662)"><flowRegion
+         id="flowRegion126-9-6"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:20px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;text-align:center;text-anchor:middle"><rect
+           id="rect128-3-4"
+           width="138.29787"
+           height="77.659576"
+           x="67.021278"
+           y="356.56223"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:20px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;text-align:center;text-anchor:middle" /></flowRegion><flowPara
+         id="flowPara130-6-3">Trait</flowPara></flowRoot>    <flowRoot
+       xml:space="preserve"
+       id="flowRoot124-0-0"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:20px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none"
+       transform="matrix(0.26458333,0,0,0.26458333,116.98018,-23.108662)"><flowRegion
+         id="flowRegion126-9-3"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:20px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;text-align:center;text-anchor:middle"><rect
+           id="rect128-3-0"
+           width="138.29787"
+           height="77.659576"
+           x="67.021278"
+           y="356.56223"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:20px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;text-align:center;text-anchor:middle" /></flowRegion><flowPara
+         id="flowPara130-6-9">Trait</flowPara></flowRoot>    <flowRoot
+       xml:space="preserve"
+       id="flowRoot124-06-3-2"
+       style="font-style:normal;font-weight:normal;font-size:16px;line-height:1.25;font-family:sans-serif;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none"
+       transform="matrix(0.26458333,0,0,0.26458333,17.816622,-22.916568)"><flowRegion
+         id="flowRegion126-2-3-5"
+         style="font-size:16px;text-align:center;text-anchor:middle"><rect
+           id="rect128-6-8-4"
+           width="138.29787"
+           height="77.659576"
+           x="67.021278"
+           y="356.56223"
+           style="font-size:16px;text-align:center;text-anchor:middle" /></flowRegion><flowPara
+         id="flowPara130-1-60-0">Phylogeny</flowPara></flowRoot>    <flowRoot
+       xml:space="preserve"
+       id="flowRoot124-06-3-5"
+       style="font-style:normal;font-weight:normal;font-size:16px;line-height:1.25;font-family:sans-serif;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none"
+       transform="matrix(0.26458333,0,0,0.26458333,88.947593,-22.916568)"><flowRegion
+         id="flowRegion126-2-3-9"
+         style="font-size:16px;text-align:center;text-anchor:middle"><rect
+           id="rect128-6-8-46"
+           width="138.29787"
+           height="77.659576"
+           x="67.021278"
+           y="356.56223"
+           style="font-size:16px;text-align:center;text-anchor:middle" /></flowRegion><flowPara
+         id="flowPara130-1-60-9">Phylogeny</flowPara></flowRoot>    <flowRoot
+       xml:space="preserve"
+       id="flowRoot124-9-2"
+       style="font-style:normal;font-weight:normal;font-size:16px;line-height:1.25;font-family:sans-serif;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none"
+       transform="matrix(0.26458333,0,0,0.26458333,83.891795,7.6324585)"><flowRegion
+         id="flowRegion126-6-2"
+         style="font-size:16px;text-align:center;text-anchor:middle"><rect
+           id="rect128-4-4"
+           width="138.29787"
+           height="77.659576"
+           x="67.021278"
+           y="356.56223"
+           style="font-size:16px;text-align:center;text-anchor:middle" /></flowRegion><flowPara
+         id="flowPara130-3-7"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Arial;-inkscape-font-specification:Arial">Missing data probability</flowPara></flowRoot>    <flowRoot
+       xml:space="preserve"
+       id="flowRoot124-9-7"
+       style="font-style:normal;font-weight:normal;font-size:16px;line-height:1.25;font-family:sans-serif;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none"
+       transform="matrix(0.26458333,0,0,0.26458333,-0.57698001,12.924263)"><flowRegion
+         id="flowRegion126-6-5"
+         style="font-size:16px;text-align:center;text-anchor:middle"><rect
+           id="rect128-4-48"
+           width="138.29787"
+           height="77.659576"
+           x="67.021278"
+           y="356.56223"
+           style="font-size:16px;text-align:center;text-anchor:middle" /></flowRegion><flowPara
+         id="flowPara130-3-1"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Arial;-inkscape-font-specification:Arial">Missing data probability</flowPara></flowRoot>    <path
+       style="fill:url(#linearGradient1151);fill-opacity:1;stroke:none;stroke-width:0.39310038;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="path32-6-8"
+       transform="matrix(0.06731269,-0.99773193,0.9982323,0.05943303,0,0)"
+       sodipodi:type="arc"
+       sodipodi:cx="-92.713142"
+       sodipodi:cy="181.11757"
+       sodipodi:rx="18.863619"
+       sodipodi:ry="18.572382"
+       sodipodi:start="0"
+       sodipodi:end="6.1258165"
+       sodipodi:open="true"
+       d="m -73.849524,181.11757 a 18.863619,18.572382 0 0 1 -18.121674,18.55801 18.863619,18.572382 0 0 1 -19.547202,-17.09816 18.863619,18.572382 0 0 1 16.584014,-19.90302 18.863619,18.572382 0 0 1 20.851766,15.5325" />
+    <flowRoot
+       xml:space="preserve"
+       id="flowRoot124-9"
+       style="font-style:normal;font-weight:normal;font-size:16px;line-height:1.25;font-family:sans-serif;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none"
+       transform="matrix(0.26458333,0,0,0.26458333,138.28075,6.3923275)"><flowRegion
+         id="flowRegion126-6"
+         style="font-size:16px;text-align:center;text-anchor:middle"><rect
+           id="rect128-4"
+           width="138.29787"
+           height="77.659576"
+           x="67.021278"
+           y="356.56223"
+           style="font-size:16px;text-align:center;text-anchor:middle" /></flowRegion><flowPara
+         id="flowPara130-3"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Arial;-inkscape-font-specification:Arial">Missing data probability</flowPara></flowRoot>    <ellipse
+       style="fill:url(#linearGradient1108-3);fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.38860556;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="path32-5"
+       cx="89.522606"
+       cy="75.669586"
+       rx="18.858599"
+       ry="18.154921" />
+    <ellipse
+       style="fill:url(#linearGradient1108-35);fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.38860556;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="path32-9"
+       cx="159.08495"
+       cy="76.719284"
+       rx="18.858599"
+       ry="18.154921" />
+  </g>
+</svg>
