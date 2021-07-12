@@ -1,11 +1,17 @@
-
 pacotes <- c("mice","geiger","ape","phytools","MPSEM","doParallel","letsR","vegan")
+
+
+# Importing packages ------------------------------------------------------
+
 invisible(sapply(pacotes,
                  FUN= function(x) {if(!require(x,character.only=T)){install.packages(x,dep=T)
                                                                         require(x)}},simplify=T))
 
-source("./Script/run.simulation.R")
-source("./Script/Simulation_script.R")
+# Importing functions -----------------------------------------------------
+
+source("./R/run.simulation.R")
+source("./R/Simulation_script.R")
+
 #alphas= 1.5
 #percentage=0.5
 #r=0.6
@@ -15,13 +21,15 @@ source("./Script/Simulation_script.R")
 #phylo=T
 #phylo = pbtree( n = sp)
 
+
+# Setting parameters ------------------------------------------------------
+
 alphas <- c(0.05, 0.1, 0.2, 0.5, 1, 2)
 percentage <- c(0.05,0.1,0.3,0.5,0.7,0.9)
 r <- 0.6 
 sp <- 200
 
-# r = 0.6
-# run random missing data
+# Run random missing data -------------------------------------------------
 
 dir.create("./Results/0.6/rand", recursive = TRUE)
 
@@ -29,22 +37,31 @@ run_simulation(alphas = alphas, percentage = percentage, r= r, sp = sp, output =
 
 # run phylo
 
+# Run phylogenetically correlated missing data ----------------------------
+
 dir.create("./Results/0.6/phylo", recursive = TRUE)
 
 run_simulation(alphas = alphas, percentage = percentage, r= r, sp = sp, output = "./Results/0.6/phylo/result.RData", cl = 10, missing_proc = "phylo")
 
-# run trait
+
+# Run missing data correlated to a trait ----------------------------------
 
 dir.create("./Results/0.6/trait", recursive = TRUE)
 
 run_simulation(alphas = alphas, percentage = percentage, r= r, sp = sp, output = "./Results/0.6/trait/result.RData", cl = 10, missing_proc = "trait")
 
 
+# Importing simulations results -------------------------------------------
+
 for(i in c("trait", "phylo", "rand")){
   
   load(paste0("./Results/0.6/", i, "/result.RData"))
 
 }
+
+
+# Checking simulation errors ----------------------------------------------
+
 
 check.results <- function (resultado) {
                     sapply(1:length(resultado), FUN = 
@@ -53,12 +70,15 @@ check.results <- function (resultado) {
                                                      function(x) if(is.null(resultado[[z]][,y][[x]]$statistics)){c(z,y,x)})))
                     
 }
+
 #(errors <- do.call("rbind", check.results(mice.resul.trait)))###encontrar as falhas)
 #lapply(1:nrow(errors), function(x) mean.resul.trait[[errors[x,1]]][,errors[x,2]][[errors[x,3]]])
 
 #PEM.resul.trait[[errors[,1]]][,errors[,2]][[errors[,3]]] <- sim.2(sp,alphas[2],percentage[1],"PEM",correl="trait",r)
 
-######Construcao da tabela#####################################################################                        
+
+# Creating result's table -------------------------------------------------
+
 metodos <- c("PEM.notrait","PEM.resul","listwise","dist.resul","mice.phy", "mice.resul")
 
 matriz <- NULL
@@ -80,6 +100,9 @@ for(m in 1:length(metodos)){
 }
 }
 }
+
+
+# Cleaning result's table -------------------------------------------------
 
 matriz.1 <- as.data.frame(matriz,stringsAsFactors=F)
 matriz.1[,1:11] <- apply(matriz[,-(12:15)],2,FUN=as.numeric)
