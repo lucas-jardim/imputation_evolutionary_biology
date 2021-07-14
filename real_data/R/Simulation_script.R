@@ -1,20 +1,35 @@
 sim.real <- function(traits, alphas,percentage,method,m=10,phylo=F,trait.PEM=T,correl, tree){
-  #r
-  #sp
-  #correl = c("rand","phylo","trait")
+  ###########################################################################  
+  # traits = Trait's data.
+  # alphas = Ornstein-Uhlenbeck model's parameter.
+  # percentage = percentabe of missing data.  
+  # method = method to dealing missing data. 
+  # m = Amount of multiple imputation datasets.
+  # phylo = Boolean argument. If FALSE phylogenetic eigenvectors are not included in mice.
+  # trait.PEM = Boolean argument. If TRUE an explanatory variable is included in PEM.
+  # correl = Mechanism of missing data. The options are "rand", "phylo", "trait".
+  # tree = phylogeny.  
+  ###########################################################################  
+  
   traits <- traits[match(tree$tip.label, traits[, 1]), ]
   tree$node.label <- paste("N", 1:tree$Nnode, sep = "")
   trait <- traits[, 2]
   names(trait) <- traits[, 1]
   trait2 <- traits[, 3]
   names(trait2) <- traits[, 1]
-  ####dele??o##############################################################################
+  
+  # Generating missing values -----------------------------------------------
+  
   if(correl=="rand"){
+    # excluding values by chance
+    
     trait1 <- trait
     trait1[sample(1:length(trait1),percentage*length(trait1))] <- NA 
     na.sp <- is.na(trait1)
   }
   if(correl=="phylo"){
+    # Phylogenetically correlated missing values
+    
     distancia.phy <- cophenetic(tree)
     distancia.phy <- distancia.phy[sample(1:nrow(distancia.phy),1),]
     trait1<- trait
@@ -23,34 +38,35 @@ sim.real <- function(traits, alphas,percentage,method,m=10,phylo=F,trait.PEM=T,c
   }
   
   if(correl=="trait"){
-  #  COV <- matrix(0,length(tree$tip.label),length(tree$tip.label))
-  #  diag(COV) <- diag(vcv(tree))
-  #  trait2 <-  r*trait+sqrt(1-r^2)*mvrnorm(1,mu=rep(0,length(tree$tip.label)),Sigma=COV)
+    # Missing data correlated to a trait
+    
     trait1 <- trait    
     trait1[order(trait2)[1:(percentage*length(trait1))]] <- NA    
     na.sp <- is.na(trait1)
     
   }
-  ###imputacao############################################################
-  ####media############################################################### 
+  
+  # Imputation --------------------------------------------------------------
+  
   if(method=="dist"){
+    # Imputing by phylogenetic distance
+    
     distance <- cophenetic(tree)
     diag(distance) <- NA
     missing_dist <- distance[names(trait1[na.sp]), !na.sp]
-    #closest_sp <- apply(missing_dist, 1, function(i) names(which(i == min(i, na.rm = TRUE))))
     closest_sp <- lapply(1:nrow(missing_dist), function(i) names(which(missing_dist[i, ] == min(missing_dist[i, ], na.rm = TRUE))))
     source_sp <- sapply(closest_sp, function(i) sample(i, 1))
     names(source_sp) <- names(trait1[na.sp])
-    trait1[names(source_sp)] <- trait1[source_sp]#dado imputado
-    ktrait <- phylosig(tree=tree,x=trait)#estima os sinais filogen?ticos dos dados completos 
-    ktrait1 <- phylosig(tree=tree,x=trait1)# estima os sinais filogen?ticos dos dados imputados
+    trait1[names(source_sp)] <- trait1[source_sp]
+    ktrait <- phylosig(tree=tree,x=trait) 
+    ktrait1 <- phylosig(tree=tree,x=trait1)
     distancia.phy <- cophenetic(tree)
     sturges <- 1+3.3*log((length(trait)*(length(trait)-1))/2)
     moran <- lets.correl(trait,distancia.phy,sturges,equidistant=T,plot=F)
     moran <- moran[1, 1]
     moran1 <- lets.correl(trait1,distancia.phy,sturges,equidistant=T,plot=F)
     moran1 <- moran1[1, 1]
-    sd.mean <- sqrt(mean((trait[na.sp]-trait1[na.sp])^2)/(max(trait)-min(trait)))###NRMSE permite calcular a eficiencia da imputacao
+    sd.mean <- sqrt(mean((trait[na.sp]-trait1[na.sp])^2)/(max(trait)-min(trait)))
     mean.trait<- mean(trait)
     mean.trait1 <- mean(trait1)
     var.trait <- var(trait)
@@ -66,12 +82,14 @@ sim.real <- function(traits, alphas,percentage,method,m=10,phylo=F,trait.PEM=T,c
                            "beta.trait", "beta.trait1", "sd.mean")
     
   }
-  ####mice################################################################
+  
   if(method =="mice"){
-    matriz <- cbind(trait,trait1)#cria matriz com os dados completos e deletados
-    matriz.mice <- cbind(trait1,trait2)#cria matriz com os dados completos e deletados
+    # Multiple imputation
+    
+    matriz <- cbind(trait,trait1)
+    matriz.mice <- cbind(trait1,trait2)
     if(phylo==F){mice1 <-mice(matriz.mice,m)}else{
-      pruned <- drop.tip(tree, names(trait1[na.sp]))#cria matriz com os dados completos e deletados
+      pruned <- drop.tip(tree, names(trait1[na.sp]))
       graphs <-  Phylo2DirectedGraph(pruned)
       fit <- PEM.fitSimple(y = trait1[na.sp==F], x=trait2[na.sp==F], w = graphs,lower=0,upper=1)
       PEM.t <- PEM.build(graphs, d="distance",sp="species",a=unlist(fit$a), psi=unlist(fit$psi))                                                            
@@ -84,15 +102,15 @@ sim.real <- function(traits, alphas,percentage,method,m=10,phylo=F,trait.PEM=T,c
       mice1 <- mice(matriz.mice,m) 
     }
     mice1.complete <- sapply(1:mice1$m, FUN = function(y) complete(mice1,y)[,1])
-    ktrait <- phylosig(tree=tree,x=trait)#estima os sinais filogen?ticos dos dados completos
-    ktrait1 <- mean(apply(mice1.complete,2,FUN = phylosig,tree=tree))# estima os sinais filogen?ticos dos dados imputados
+    ktrait <- phylosig(tree=tree,x=trait)
+    ktrait1 <- mean(apply(mice1.complete,2,FUN = phylosig,tree=tree))
     distancia.phy <- cophenetic(tree)
     sturges <- 1+3.3*log((length(trait)*(length(trait)-1))/2)
     moran <- lets.correl(trait,distancia.phy,sturges,equidistant=T,plot=F)
     moran <- moran[1, 1]
     moran1 <- sapply(1:ncol(mice1.complete),FUN= function(x)lets.correl(mice1.complete[,x],y=distancia.phy,z=sturges,equidistant=T,plot=F),simplify=F)
     moran1 <- mean(sapply(moran1, function(x) x[1,1]))
-    sd.mean <- sqrt(mean((trait[na.sp]-rowMeans(mice1.complete[na.sp,]))^2)/(max(trait)-min(trait)))###NRMSE ,permite calcular a eficiencia da imputacao como Penone
+    sd.mean <- sqrt(mean((trait[na.sp]-rowMeans(mice1.complete[na.sp,]))^2)/(max(trait)-min(trait)))
     mean.trait <- mean(trait)
     mean.trait1 <- mean(apply(mice1.complete, 2, mean))
     var.trait <- var(trait)
@@ -109,12 +127,14 @@ sim.real <- function(traits, alphas,percentage,method,m=10,phylo=F,trait.PEM=T,c
                            "beta.trait", "beta.trait1", "sd.mean")
     
   }
-  ####listwise###################################################################
+ 
   if(method == "listwise"){
+    # Ignoring missing data
+    
     tree1 <- drop.tip(tree,names(trait1)[na.sp])
     trait1.s <- trait1[!na.sp]
-    ktrait <- phylosig(tree=tree,x=trait)#estima os sinais filogen?ticos dos dados completos 
-    ktrait1 <- phylosig(tree=tree,x=trait1.s)# estima os sinais filogen?ticos dos dados imputados
+    ktrait <- phylosig(tree=tree,x=trait)
+    ktrait1 <- phylosig(tree=tree,x=trait1.s)
     distancia.phy <- cophenetic(tree)
     distancia.phy1 <- cophenetic(tree1)
     sturges <- 1+3.3*log((length(trait)*(length(trait)-1))/2)
@@ -139,10 +159,11 @@ sim.real <- function(traits, alphas,percentage,method,m=10,phylo=F,trait.PEM=T,c
                            "beta.trait", "beta.trait1", "sd.mean")
   }
   
-  ####PEM########################################################################
   if(method == "PEM"){
+    # Phylogenetic eigenvector mapping
+    
     matriz <- cbind(trait,trait1)
-    pruned <- drop.tip(tree, names(trait1[na.sp]))#cria matriz com os dados completos e deletados
+    pruned <- drop.tip(tree, names(trait1[na.sp]))
     graphs <-  Phylo2DirectedGraph(pruned)
     if(trait.PEM==F){
       fit <- PEM.fitSimple(y = trait1[na.sp==F],x=NULL, w = graphs,lower=0,upper=1)
@@ -161,15 +182,15 @@ sim.real <- function(traits, alphas,percentage,method,m=10,phylo=F,trait.PEM=T,c
       trait1[na.sp] <- predict(object = fit, targets = loc, lmobject = eigens.t, newdata= newdata)
     } 
     
-    ktrait <- phylosig(tree=tree,x=trait)#estima os sinais filogen?ticos dos dados completos 
-    ktrait1 <- phylosig(tree=tree,x=trait1)# estima os sinais filogen?ticos dos dados imputados
+    ktrait <- phylosig(tree=tree,x=trait)
+    ktrait1 <- phylosig(tree=tree,x=trait1)
     distancia.phy <- cophenetic(tree)
     sturges <- 1+3.3*log((length(trait)*(length(trait)-1))/2)
     moran <- lets.correl(trait,distancia.phy,sturges,equidistant=T,plot=F)
     moran <- moran[1, 1]
     moran1 <- lets.correl(trait1,distancia.phy,sturges,equidistant=T,plot=F)
     moran1 <- moran1[1, 1]
-    sd.mean <- sqrt(mean((trait[na.sp]-trait1[na.sp])^2)/(max(trait)-min(trait)))###permite calcular a eficiencia da imputacao
+    sd.mean <- sqrt(mean((trait[na.sp]-trait1[na.sp])^2)/(max(trait)-min(trait)))
     mean.trait<- mean(trait)
     mean.trait1 <- mean(trait1)
     var.trait <- var(trait)

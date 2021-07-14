@@ -88,7 +88,7 @@ sim.2 <- function(sp,alphas,percentage,method,r,m=10,phylo=F,trait.PEM=T,correl,
   }
   
   if(method =="mice"){
-    #Multiple imputation
+    # Multiple imputation
     
     matriz <- cbind(trait,trait1)# matrix with complete and excluded data
     matriz.mice <- cbind(trait1,trait2)
@@ -163,7 +163,7 @@ sim.2 <- function(sp,alphas,percentage,method,r,m=10,phylo=F,trait.PEM=T,correl,
   }
   
    if(method == "PEM"){
-    #Phylogenetic eigenvector mapping
+    # Phylogenetic eigenvector mapping
      
     matriz <- cbind(trait,trait1)
     pruned <- drop.tip(tree, names(trait1[na.sp]))

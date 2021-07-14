@@ -1,7 +1,7 @@
 library("rpart")
 library("rpart.plot")
 
-# Regression tree
+# Run regression tree -----------------------------------------------------
 
 k_data <- cbind(log(abs((matriz.1[, 2] - matriz.1[, 1])/matriz.1[, 1])), matriz.1[, 11:ncol(matriz.1)])
 colnames(k_data)[1] <- "k_error"
@@ -22,6 +22,8 @@ mean <- rpart(mean_error ~ ., data = mean_data)
 var_data <- cbind(log(abs((matriz.1[, 8] - matriz.1[, 7])/matriz.1[, 7])), matriz.1[, 11:ncol(matriz.1)])
 colnames(var_data)[1] <- "var_error"
 var <- rpart(var_error ~ ., data = var_data)
+
+# Extracting variable's importance ----------------------------------------
 
 importance_variable <- matrix(0, nrow = 5, ncol = 5)
 colnames(importance_variable) <- colnames(matriz.1)[11:ncol(matriz.1)]

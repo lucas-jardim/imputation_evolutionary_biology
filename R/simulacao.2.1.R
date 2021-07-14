@@ -12,16 +12,6 @@ invisible(sapply(pacotes,
 source("./R/run.simulation.R")
 source("./R/Simulation_script.R")
 
-#alphas= 1.5
-#percentage=0.5
-#r=0.6
-#m=10
-#correl="rand"
-#sp=200
-#phylo=T
-#phylo = pbtree( n = sp)
-
-
 # Setting parameters ------------------------------------------------------
 
 alphas <- c(0.05, 0.1, 0.2, 0.5, 1, 2)
@@ -100,7 +90,6 @@ for(m in 1:length(metodos)){
 }
 }
 }
-
 
 # Cleaning result's table -------------------------------------------------
 

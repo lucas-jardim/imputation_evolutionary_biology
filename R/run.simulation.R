@@ -1,7 +1,7 @@
 run_simulation <- function(alphas, percentage, r, sp, output, cl, missing_proc){
 
 ###########################################################################
-# alphas = An Ornstein-Uhlenbeck's alpha.
+# alphas = Ornstein-Uhlenbeck's alpha.
 # percentage = Percentage of missing data.
 # r = Trait's correlation.
 # sp = Number of species.

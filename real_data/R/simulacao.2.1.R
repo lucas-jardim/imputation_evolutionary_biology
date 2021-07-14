@@ -1,12 +1,18 @@
 
+# Loading packages --------------------------------------------------------
+
 pacotes <- c("mice","geiger","ape","phytools","phylolm","MPSEM","doParallel","letsR","vegan")
 invisible(sapply(pacotes,
                  FUN= function(x) {if(!require(x,character.only=T)){install.packages(x,dep=T)
                                                                         require(x)}},simplify=T))
 
+
+# Loading functions -------------------------------------------------------
+
 source("./real_data/scripts/run.simulation.R")
 source("./real_data/scripts/Simulation_script.R")
 
+# Setting parameters ------------------------------------------------------
 
 alphas <- c(0.05, 0.1, 0.2, 0.5, 1, 2) 
 percentage <- c(0.05,0.1,0.3,0.5,0.7,0.9)
@@ -17,35 +23,38 @@ tree <- read.newick("./real_data/data/analysis_tree.tree")
 dat <- traits[, 2:3]
 row.names(dat) <- traits[, 1]
 dat <- dat[match(tree$tip.label, row.names(dat)), ]
-phylo_sig <- phylolm(Final.Brain.Weight..g. ~ 1, data = dat, phy = tree, model = "OUfixedRoot") #mudar para ou estimation no geiger
+phylo_sig <- phylolm(Final.Brain.Weight..g. ~ 1, data = dat, phy = tree, model = "OUfixedRoot") 
 
 
-
-# run random missing data
+# Run random missing data -------------------------------------------------
 
 dir.create("./real_data/results/0.6/rand", recursive = TRUE)
 
 run_simulation(traits, tree, alphas = alphas, percentage = percentage, output = "./real_data/results/0.6/rand/result.RData", cl = cl, missing_proc = "rand")
 
-# run phylo
+
+# Run phylogenetically correlated data ------------------------------------
 
 dir.create("./real_data/results/0.6/phylo", recursive = TRUE)
 
 run_simulation(traits, tree, alphas = alphas, percentage = percentage, output = "./real_data/results/0.6/phylo/result.RData", cl = cl, missing_proc = "phylo")
 
-# run trait
+
+# Run missing data correlated to a trait ----------------------------------
 
 dir.create("./real_data/results/0.6/trait", recursive = TRUE)
 
 run_simulation(traits, tree, alphas = alphas, percentage = percentage, output = "./real_data/results/0.6/trait/result.RData", cl = cl, missing_proc = "trait")
 
-
+# Importing simulations results -------------------------------------------
 
 for(i in c("trait", "phylo", "rand")){
   
   load(paste0("./real_data/results/0.6/", i, "/result.RData"))
 
 }
+
+# Checking simulation errors ----------------------------------------------
 
 check.results <- function (resultado) {
                     sapply(1:length(resultado), FUN = 
@@ -57,8 +66,8 @@ check.results <- function (resultado) {
 
 #(errors <- do.call("rbind", check.results(dist.resul.phylo)))###encontrar as falhas)
 
+# Creating result's table -------------------------------------------------
 
-######Construcao da tabela#####################################################################                        
 metodos <- c("PEM.notrait","PEM.resul","listwise","dist.resul","mice.phy", "mice.resul")
 
 matriz <- NULL
@@ -80,6 +89,8 @@ for(m in 1:length(metodos)){
 }
 }
 }
+
+# Cleaning result's table -------------------------------------------------
 
 matriz.1 <- as.data.frame(matriz,stringsAsFactors=F)
 matriz.1[,1:11] <- apply(matriz[,-(12:15)],2,FUN=as.numeric)

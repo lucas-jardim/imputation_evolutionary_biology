@@ -2,7 +2,7 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-This repository contains codes of the [paper](https://doi.org/10.1007/s11692-021-09534-0) published in the Evolutionary Biology. 
+This repository contains codes of the [paper](https://doi.org/10.1007/s11692-021-09534-0) published in Evolutionary Biology. 
 
 
 ## How to cite
@@ -11,7 +11,7 @@ This repository contains codes of the [paper](https://doi.org/10.1007/s11692-021
 
 ## Data  
 
-This paper evaluated the effects of imputed data on phylogenetic signal estimation using synthetic data and computational simulations. The simulations were also applied on primate's brain and body size data extracted from [DeCasien et al. (2017)](https://doi.org/10.1038/s41559-017-0112). 
+This paper evaluated the effects of imputed data on phylogenetic signal estimation using synthetic data and computational simulations. The simulations also applied on primate's brain and body size data extracted from [DeCasien et al. (2017)](https://doi.org/10.1038/s41559-017-0112). 
 
 ### Repository structure
 

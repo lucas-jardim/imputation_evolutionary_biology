@@ -2,6 +2,19 @@ library(RColorBrewer)
 
 grafico <- function(alphas,cenario,ylimit,ylimiti,matriz,coluna,cores,space, yleg){
   
+  ###########################################################################
+  # alphas = A numeric vector with the simulated values of Ornstein-Uhlenbeck's alphas.
+  # cenario = A character vector with simulated missing data mechanisms.
+  # ylimit = Plot's upper limits of y axis.
+  # ylimiti = Plot's lower limits of y axis.
+  # matriz = Results matrix.
+  # coluna = Matrix column (matriz) to be plotted.
+  # cores = A vector of color.
+  # space = Steps in axis  values.
+  # yleg = A character vector with simulated missing data mechanisms.
+  ###########################################################################
+  
+  
     for(j in 1:length(cenario)){
       plot.new()
       plot.window(xlim=c(0.05,1),ylim=c(ylimiti,ylimit))
@@ -41,7 +54,7 @@ dev.off()
 }
 
 
-# Decision tree -----------------------------------------------------------
+# Regression tree -----------------------------------------------------------
 
 for(i in c("moran", "beta", "mean", "var", "k")){
   tiff(filename=paste0("./real_data/graphics/", i, "_RT.tif"),res=300,unit="cm",width=30,height=30)
